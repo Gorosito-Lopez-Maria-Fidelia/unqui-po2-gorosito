@@ -15,10 +15,6 @@ public class Rectangulo {
 		this.punto = punto;
 	}
 	
-	public Punto getPunto(Punto punto) {
-		return this.punto;
-	}
-	
 	public int getBase(){
 		return this.base;
 	}
@@ -34,15 +30,16 @@ public class Rectangulo {
 	
 	private void setBase(int base) {
 		if(base > 0) {
-			this.base = base;
-		}
+			throw new IllegalArgumentException("La base debe ser mayor a 0");
+			}
+		this.base = base;
 	}
 	
 	private void setAltura(int altura) {
-		if(altura >  0){
-			this.altura = altura;
+		if(altura <=  0){
+			throw new IllegalArgumentException("La altura debe ser mayor a 0");
 		}
-		
+		this.altura = altura;		
 	}
 
 	public int area() {
@@ -63,10 +60,3 @@ public class Rectangulo {
 	
 	
 }
-
-
-/*
- * crearse en forma apropiada y asegurando su consistencia
- * deberia crear teniendo en cuenta el ancho 
- * */
-0
